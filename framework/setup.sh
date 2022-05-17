@@ -21,11 +21,11 @@ echo "--> Setting up the OEA framework assets."
 # 1) install integration assets
 #  - setup Linked Services 
 sed "s/yourkeyvault/$key_vault/" $this_file_path/linkedService/LS_KeyVault_OEA.json > $this_file_path/tmp/LS_KeyVault_OEA.json
-eval "az synapse linked-service create --workspace-name $synapse_workspace --name LS_KeyVault_OEA --file @$this_file_path/tmp/LS_KeyVault_OEA.json"
+eval "az synapse linked-service create --workspace-name $synapse_workspace --name LS_KeyVault --file @$this_file_path/tmp/LS_KeyVault_OEA.json"
 sed "s/yourstorageaccount/$storage_account/" $this_file_path/linkedService/LS_ADLS_OEA.json > $this_file_path/tmp/LS_ADLS_OEA.json
-eval "az synapse linked-service create --workspace-name $synapse_workspace --name LS_ADLS_OEA --file @$this_file_path/tmp/LS_ADLS_OEA.json"
+eval "az synapse linked-service create --workspace-name $synapse_workspace --name LS_ADLS --file @$this_file_path/tmp/LS_ADLS_OEA.json"
 sed "s/yoursynapseworkspace/$synapse_workspace/" $this_file_path/linkedService/LS_SQL_Serverless_OEA.json > $this_file_path/tmp/LS_SQL_Serverless_OEA.json
-eval "az synapse linked-service create --workspace-name $synapse_workspace --name LS_SQL_Serverless_OEA --file @$this_file_path/tmp/LS_SQL_Serverless_OEA.json"
+eval "az synapse linked-service create --workspace-name $synapse_workspace --name LS_SQL_Serverless--file @$this_file_path/tmp/LS_SQL_Serverless_OEA.json"
 eval "az synapse linked-service create --workspace-name $synapse_workspace --name LS_Azure_SQL_DB --file @$this_file_path/linkedService/LS_Azure_SQL_DB.json"
 eval "az synapse linked-service create --workspace-name $synapse_workspace --name LS_HTTP --file @$this_file_path/linkedService/LS_HTTP.json"
 #  - setup Datasets
@@ -48,7 +48,7 @@ eval "az synapse pipeline create --workspace-name $synapse_workspace --name Copy
 eval "az synapse pipeline create --workspace-name $synapse_workspace --name Copy_from_each_URL --file @$this_file_path/pipeline/Copy_from_each_URL.json"
 eval "az synapse pipeline create --workspace-name $synapse_workspace --name Copy_from_Azure_SQL_DB --file @$this_file_path/pipeline/Copy_from_Azure_SQL_DB.json"
 eval "az synapse pipeline create --workspace-name $synapse_workspace --name Copy_all_from_Azure_SQL_DB --file @$this_file_path/pipeline/Copy_all_from_Azure_SQL_DB.json"
-eval "az synapse pipeline create --workspace-name $synapse_workspace --name call_oea_framework --file @$this_file_path/pipeline/call_oea_framework.json"
+#eval "az synapse pipeline create --workspace-name $synapse_workspace --name call_oea_framework --file @$this_file_path/pipeline/call_oea_framework.json"
 eval "az synapse pipeline create --workspace-name $synapse_workspace --name create_lake_db --file @$this_file_path/pipeline/create_lake_db.json"
 eval "az synapse pipeline create --workspace-name $synapse_workspace --name create_sql_db --file @$this_file_path/pipeline/create_sql_db.json"
 sed "s/yourstorageaccount/$storage_account/" $this_file_path/pipeline/example_main_pipeline.json > $this_file_path/tmp/example_main_pipeline.json

@@ -83,7 +83,7 @@
                     "name": "Hack_Framework"
                 },
                 "annotations": []
-            },
+            }, 
             "dependsOn": [
                 "[concat(variables('workspaceId'), '/notebooks/OEA_connector')]"
             ]
