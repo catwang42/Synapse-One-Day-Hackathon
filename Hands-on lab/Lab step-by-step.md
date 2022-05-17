@@ -2,11 +2,6 @@
 
 **Azure Synapse Analytics and AI**
 
-
-<div class="MCWHeader2">
-Exercise 1 
-</div>
-
 <div class="MCWHeader3">
 May 2022
 </div>
@@ -35,7 +30,8 @@ All exercises in this lab utilize the workspace Synapse Studio user interface. T
 
 4. Check if Storage has grant the right role assignment for Synapse to read data from blob contrainer
 
-5. Set up Linked services
+5. Set up Linked services.
+
     ![Linked service example](media/hackathon/Linked%20Service.png "Synapse Linked Service Example")
 
  
