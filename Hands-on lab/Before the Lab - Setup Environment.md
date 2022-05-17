@@ -14,4 +14,4 @@ You can setup this fully functional reference architecture (which includes test 
 `cd clouddrive`\
 `git clone https://github.com/catwang42/Synapse-One-Day-Hackathon.git`
 1) Run the setup script like this (substitute "mysuffix" with your preferred suffix, which must be less than 13 characters and can only contain letters and numbers - this will be used as a suffix in the naming of provisioned resources): \
-`./Synapse-One-Day-Hackathon/setup.sh mysuffix`
+`./Synapse-One-Day-Hackathon/setup.sh mysuffix australiaeast true` 
