@@ -9,15 +9,9 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-October 2021
+May 2022
 </div>
 
-
-Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
-
-Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
-
-The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
 © 2021 Microsoft Corporation. All rights reserved.
 
@@ -33,9 +27,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Requirements](#requirements)
   - [Before the hands-on lab](#before-the-hands-on-lab)
   - [Resource naming throughout this lab](#resource-naming-throughout-this-lab)
-  - [Exercise 1: Accessing the Azure Synapse Analytics workspace](#exercise-1-accessing-the-azure-synapse-analytics-workspace)
-    - [Task 1: Launching Synapse Studio](#task-1-launching-synapse-studio)
-  - [Exercise 2: Create and populate the supporting tables in the SQL Pool](#exercise-2-create-and-populate-the-supporting-tables-in-the-sql-pool)
+  - [Exercise 1: Create and populate the supporting tables in the SQL Pool](#exercise-2-create-and-populate-the-supporting-tables-in-the-sql-pool)
     - [Task 1: Create the sale table](#task-1-create-the-sale-table)
     - [Task 2: Populate the sale table](#task-2-populate-the-sale-table)
     - [Task 3: Create the customer information table](#task-3-create-the-customer-information-table)
@@ -43,16 +35,22 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 5: Create the campaign analytics table](#task-5-create-the-campaign-analytics-table)
     - [Task 6: Populate the campaign analytics table](#task-6-populate-the-campaign-analytics-table)
     - [Task 7: Populate the product table](#task-7-populate-the-product-table)
-  - [Exercise 3: Exploring raw parquet](#exercise-3-exploring-raw-parquet)
+  - [Exercise 2: Exploring raw parquet](#exercise-3-exploring-raw-parquet)
     - [Task 1: Query sales Parquet data with Synapse SQL Serverless](#task-1-query-sales-parquet-data-with-synapse-sql-serverless)
     - [Task 2: Query sales Parquet data with Azure Synapse Spark](#task-2-query-sales-parquet-data-with-azure-synapse-spark)
-  - [Exercise 4: Exploring raw text based data with Azure Synapse SQL Serverless](#exercise-4-exploring-raw-text-based-data-with-azure-synapse-sql-serverless)
+  - [Exercise 3: Exploring raw text based data with Azure Synapse SQL Serverless](#exercise-4-exploring-raw-text-based-data-with-azure-synapse-sql-serverless)
     - [Task 1: Query CSV data](#task-1-query-csv-data)
     - [Task 2: Query JSON data](#task-2-query-json-data)
-  - [Exercise 5: Security](#exercise-5-security)
+  - [Exercise 4: Security](#exercise-5-security)
     - [Task 1: Column level security](#task-1-column-level-security)
     - [Task 2: Row level security](#task-2-row-level-security)
     - [Task 3: Dynamic data masking](#task-3-dynamic-data-masking)
+  - [Exercise 5: Monitoring](#exercise-7-monitoring)
+    - [Task 1: Workload importance](#task-1-workload-importance)
+    - [Task 2: Workload isolation](#task-2-workload-isolation)
+    - [Task 3: Monitoring with Dynamic Management Views](#task-3-monitoring-with-dynamic-management-views)
+    - [Task 4: Orchestration Monitoring with the Monitor Hub](#task-4-orchestration-monitoring-with-the-monitor-hub)
+    - [Task 5: Monitoring SQL Requests with the Monitor Hub](#task-5-monitoring-sql-requests-with-the-monitor-hub)
   - [Exercise 6: Machine Learning](#exercise-6-machine-learning)
     - [Task 1: Grant Contributor rights to the Azure Machine Learning Workspace to the Synapse Workspace Managed Identity](#task-1-grant-contributor-rights-to-the-azure-machine-learning-workspace-to-the-synapse-workspace-managed-identity)
     - [Task 2: Create a linked service to the Azure Machine Learning workspace](#task-2-create-a-linked-service-to-the-azure-machine-learning-workspace)
@@ -60,18 +58,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 4: Leverage the Azure Machine Learning integration to train a regression model](#task-4-leverage-the-azure-machine-learning-integration-to-train-a-regression-model)
     - [Task 5: Review the experiment results in Azure Machine Learning Studio](#task-5-review-the-experiment-results-in-azure-machine-learning-studio)
     - [Task 6: Enrich data in a SQL pool table using a trained model from Azure Machine Learning](#task-6-enrich-data-in-a-sql-pool-table-using-a-trained-model-from-azure-machine-learning)
-  - [Exercise 7: Monitoring](#exercise-7-monitoring)
-    - [Task 1: Workload importance](#task-1-workload-importance)
-    - [Task 2: Workload isolation](#task-2-workload-isolation)
-    - [Task 3: Monitoring with Dynamic Management Views](#task-3-monitoring-with-dynamic-management-views)
-    - [Task 4: Orchestration Monitoring with the Monitor Hub](#task-4-orchestration-monitoring-with-the-monitor-hub)
-    - [Task 5: Monitoring SQL Requests with the Monitor Hub](#task-5-monitoring-sql-requests-with-the-monitor-hub)
-  - [Exercise 8: Synapse Pipelines and Cognitive Search (Optional)](#exercise-8-synapse-pipelines-and-cognitive-search-optional)
-    - [Task 1: Create the invoice storage container](#task-1-create-the-invoice-storage-container)
-    - [Task 2: Create and train an Azure Forms Recognizer model and setup Cognitive Search](#task-2-create-and-train-an-azure-forms-recognizer-model-and-setup-cognitive-search)
-    - [Task 3: Configure a skillset with Form Recognizer](#task-3-configure-a-skillset-with-form-recognizer)
-    - [Task 4: Create the Synapse Pipeline](#task-4-create-the-synapse-pipeline)
-  - [Exercise 9: Introspecting Synapse Workspace data with Azure Purview (Optional)](#exercise-9-introspecting-synapse-workspace-data-with-azure-purview-optional)
+  - [Exercise 7: Introspecting Synapse Workspace data with Azure Purview (Optional)](#exercise-9-introspecting-synapse-workspace-data-with-azure-purview-optional)
     - [Task 1: Create an Azure Purview resource](#task-1-create-an-azure-purview-resource)
     - [Task 2: Register the Azure Synapse Analytics workspace as a data source](#task-2-register-the-azure-synapse-analytics-workspace-as-a-data-source)
     - [Task 3: Grant the Azure Purview Managed Identity the required permissions to Azure Synapse Analytics assets](#task-3-grant-the-azure-purview-managed-identity-the-required-permissions-to-azure-synapse-analytics-assets)
@@ -105,25 +92,7 @@ This lab explores the cold data scenario of ingesting various types of raw data 
 
 2. Azure Synapse Workspace / Studio
 
-3. [Python v.3.7 or newer](https://www.python.org/downloads/)
-
-4. [PIP](https://pip.pypa.io/en/stable/installing/#do-i-need-to-install-pip)
-
-5. [Visual Studio Code](https://code.visualstudio.com/)
-
-6. [Python Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-
-7. [Azure Function Core Tools v.3](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#v2)
-
-8. [Azure Functions Extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
-
-9. [Postman](https://www.postman.com/downloads/)
-
-10. [Ensure the Microsoft.Sql resource provider is registered in your Azure Subscription](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types).
-
-## Before the hands-on lab
-
-Refer to the Before the hands-on lab setup guide manual before continuing to the lab exercises.
+3. [Ensure the Microsoft.Sql resource provider is registered in your Azure Subscription](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types).
 
 ## Resource naming throughout this lab
 
@@ -141,31 +110,8 @@ For the remainder of this lab, the following terms will be used for various ASA 
 | SQL Serverless Endpoint           | `SqlServerless01`                                                                  |
 | Azure Key Vault                   | `asakeyvault{suffix}`                                                              |
 
-## Exercise 1: Accessing the Azure Synapse Analytics workspace
 
-**Duration**: 5 minutes
-
-All exercises in this lab utilize the workspace Synapse Studio user interface. This exercise will outline the steps to launch Synapse Studio. Unless otherwise specified, all instruction including menu navigation will occur in Synapse Studio.
-
-### Task 1: Launching Synapse Studio
-
-1. Log into the [Azure Portal](https://portal.azure.com).
-
-2. Expand the left menu, and select the **Resource groups** item.
-  
-    ![The Azure Portal left menu is expanded with the Resource groups item highlighted.](media/azureportal_leftmenu_resourcegroups.png "Azure Portal Resource Groups menu item")
-
-3. From the list of resource groups, select `WorkspaceResourceGroup`.
-  
-4. From the list of resources, select the **Synapse Workspace** resource, `asaworkspace{suffix}`.
-  
-    ![In the resource list, the Synapse Workspace item is selected.](media/resourcelist_synapseworkspace.png "The resource group listing")
-
-5. On the **Overview** tab of the Synapse Workspace page, select the **Open Synapse Studio** card from beneath the **Getting Started** heading. Alternatively, you can select the Workspace web URL link.
-
-    ![On the Synapse workspace resource screen, the Overview pane is shown with the Open Synapse Studio card highlighted. The Workspace web URL value is also highlighted.](media/workspaceresource_launchsynapsestudio.png "Launching Synapse Studio")
-
-## Exercise 2: Create and populate the supporting tables in the SQL Pool
+## Exercise 1: Create and populate the supporting tables in the SQL Pool
 
 **Duration**: 120 minutes
 
