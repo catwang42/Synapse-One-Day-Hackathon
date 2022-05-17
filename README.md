@@ -32,7 +32,8 @@ In this hands-on lab, you will build end-to-end data analytics with a machine le
 
 **Exercise**
 1. Exercise 0 
-    - [Setup the base environment](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Before%20the%20Lab%20-%20Setup%20Environment.md)
+    - [Setup the Analytics environment](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Before%20the%20Lab%20-%20Azure%20Synapse%20Analytics%20and%20AI.md)
+    - [Setup the Advanced environment](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Before%20the%20Lab%20-%20Advanced%20Setup%20Environment.md)
 2. Exercise 1 - Ingest data from source 
     - IAM, assign roles, set up linked service 
     - Land data in Data lake
