@@ -34,7 +34,11 @@ All exercises in this lab utilize the workspace Synapse Studio user interface. T
 
     ![Linked service example](media/hackathon/Linked%20Service.png "Synapse Linked Service Example")
 
- 
+6. Set up Integration Dataset for the pipeline 
+
+    ![Integration Dataset example](media/hackathon/integration%20dataset.png "Synapse Integration Dataset Example")
+
+
     - Land data in Data lake
     - set up analytics resources
     - Ingesting data into Stage 1 (extract and landing )
