@@ -31,10 +31,12 @@ In this Session we are going to review the architecture design of the end-to-end
 In this hands-on lab, you will build end-to-end data analytics with a machine learning solution using Azure Synapse Analytics. The information will be presented in the context of a retail scenario. We will be heavily leveraging Azure Synapse Studio, a tool that conveniently unifies the most common data operations from ingestion, transformation, querying, and visualization.
 
 **Exercise**
-1. Exercise 1 - setting up the foundations 
+1. Exercise 0 - [Setup the environment](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Before%20the%20Lab%20-%20Setup%20Environment.md)
+    - 
+1. Exercise 1 - Ingest data from source 
     - IAM, assign roles, set up linked service
     - Land data in Data lake
-    - spin up analytics resources
+    - set up analytics resources
     - Ingesting data into Stage 1 (extract and landing )
 2. Exercise 2 - Explore data in Data Lake 
     - Query Data lake using serverless SQL (parquet, csv, json)
