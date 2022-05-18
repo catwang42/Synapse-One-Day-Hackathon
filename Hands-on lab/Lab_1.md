@@ -73,6 +73,8 @@ Over the past 5 years, Wide World Importers has amassed over 3 billion rows of s
 3. In the query window, copy and paste the following query to create the customer information table. Then select the **Run** button in the query tab toolbar.
 
     ```sql
+      CREATE SCHEMA [wwi_mcw];
+      
       CREATE TABLE [wwi_mcw].[SaleSmall]
       (
         [TransactionId] [uniqueidentifier]  NOT NULL,
