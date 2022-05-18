@@ -34,31 +34,31 @@ In this hands-on lab, you will build end-to-end data analytics with a machine le
 1. Exercise 0 
     - [Setup the Analytics environment](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Before%20the%20Lab%20-%20Azure%20Synapse%20Analytics%20and%20AI.md)
     - [Setup the Advanced environment (Optional)](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Before%20the%20Lab%20-%20Advanced%20Setup%20Environment.md)
-2. [Exercise 1: Create and populate the supporting tables in the SQL Pool](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_1.md)
+2. [Exercise 1: Create and populate the supporting tables in the SQL Pool](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_1_create_tables.md)
     - IAM, assign roles, set up linked service 
     - Create managed table in Dedicated SQL
     - Load data, transform it and populate the managed table
-3. [Exercise 2: Exploring raw parquet](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_2.md)
+3. [Exercise 2: Exploring raw parquet](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_2_explore_raw_zone.md)
     - Query Data lake using serverless SQL (parquet, csv, json)
     - Query Data lake using Spark
-4. [Exercise 3: Exploring raw text based data with Azure Synapse SQL Serverless](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_3.md)
+4. [Exercise 3: Exploring raw text based data with Azure Synapse SQL Serverless](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_3_explore_text_data.md)
     - Query CSV data 
     - Query JSON data 
-5. [Exercise 4 - Security](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_4.md)
+5. [Exercise 4 - Security](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_4_security.md)
     - Column level security
     - Row level security
     - Dynamic data masking
-5. [Exercise 5: Monitoring](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_5.md)
+5. [Exercise 5: Monitoring](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_5_monitoring.md)
     - Workload Importance
     - Workload Isolation
     - Monitoring with Dynamic Management views
-6. [Exercise 6 - Macchine Learning](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_6.md)
+6. [Exercise 6 - Macchine Learning](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_6_ML.md)
     - Link machine learning workspace to Synapse 
     - Prepare data for model training using Synapse notebook 
     - Train your first regression model 
     - Review experiment results 
     - Enrich data in SQL pool table using trained model
-7. [Exercise 7: Introspecting Synapse Workspace data with Azure Purview (Optional)](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_7.md)
+7. [Exercise 7: Introspecting Synapse Workspace data with Azure Purview (Optional)](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_7_purview.md)
     - Provision Purview resource 
     - Register Azure synapse as new data source 
     - Grand permission to Synapse Analytics assets 
