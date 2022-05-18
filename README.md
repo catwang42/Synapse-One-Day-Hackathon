@@ -34,34 +34,37 @@ In this hands-on lab, you will build end-to-end data analytics with a machine le
 1. Exercise 0 
     - [Setup the Analytics environment](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Before%20the%20Lab%20-%20Azure%20Synapse%20Analytics%20and%20AI.md)
     - [Setup the Advanced environment](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Before%20the%20Lab%20-%20Advanced%20Setup%20Environment.md)
-2. Exercise 1 - Ingest data from source 
+2. [Exercise 1: Create and populate the supporting tables in the SQL Pool](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_1.md)
     - IAM, assign roles, set up linked service 
-    - Land data in Data lake
-    - set up analytics resources
-    - Ingesting data into Stage 1 (extract and landing )
-3. Exercise 2 - Explore data in Data Lake 
+    - Create managed table in Dedicated SQL
+    - Load data, transform it and populate the managed table
+3. [Exercise 2: Exploring raw parquet](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_2.md)
     - Query Data lake using serverless SQL (parquet, csv, json)
     - Query Data lake using Spark
-4. Exercise 3 - Load data in SQL pools and run Analysis 
-    - Ingesting data into stage 2
-    - Incremental loads , delta load , snapshot load (spark)
-    - Create managed table and populate the tables 
-    - Using dataflow to transform the data
-    - Processing data in stage 2
-5. Exercise 4 - Security 
+4. [Exercise 3: Exploring raw text based data with Azure Synapse SQL Serverless](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_3.md)
+    - Query CSV data 
+    - Query JSON data 
+5. [Exercise 4 - Security](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_4.md)
     - Column level security
     - Row level security
     - Dynamic data masking
-5. Exercise 5 - Power BI Integration
-    - Link power BI 
-    - Create your first Visuals 
-6. Exercise 6 - Monitoring 
+5. [Exercise 5: Monitoring](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_5.md)
     - Workload Importance
     - Workload Isolation
     - Monitoring with Dynamic Management views
-7. Exercise 7 - ML (Optional)
-    - Using AutoML to train your first machien learning model and consume the result in PowerBI 
-
+6. [Exercise 6 - Macchine Learning](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_6.md)
+    - Link machine learning workspace to Synapse 
+    - Prepare data for model training using Synapse notebook 
+    - Train your first regression model 
+    - Review experiment results 
+    - Enrich data in SQL pool table using trained model
+7. [Exercise 7: Introspecting Synapse Workspace data with Azure Purview (Optional)](https://github.com/catwang42/Synapse-One-Day-Hackathon/blob/main/Hands-on%20lab/Lab_7.md)
+    - Provision Purview resource 
+    - Register Azure synapse as new data source 
+    - Grand permission to Synapse Analytics assets 
+    - Setup scan of Synapse dedicated SQL Pool
+    - Review the result of the scan in data catalog 
+    - Observe Synapse pipeline data lineage in Purview 
 
 
 
